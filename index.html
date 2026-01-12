@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Koda Executor</title>
-  <meta name="description" content="100% keyless & free Lua executor. Premium: join our Discord and create a support ticket." />
+  <meta name="description" content="100% keyless & free Lua executor — fast, lightweight, and clean." />
   <meta name="theme-color" content="#0b1020" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Koda Executor" />
-  <meta property="og:description" content="100% keyless & free Lua executor. Premium: join our Discord and create a support ticket." />
+  <meta property="og:description" content="100% keyless & free Lua executor — fast, lightweight, and clean." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="/" />
 
   <!-- Twitter -->
   <meta name="twitter:title" content="Koda Executor" />
-  <meta name="twitter:description" content="100% keyless & free Lua executor. Premium: join our Discord and create a support ticket." />
+  <meta name="twitter:description" content="100% keyless & free Lua executor — fast, lightweight, and clean." />
 
   <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
@@ -44,8 +44,12 @@
           <li><a href="#about">About</a></li>
           <li><a href="#download">Download</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a class="btn btn--ghost btn--sm" href="https://discord.gg/anhM7RXB6T" target="_blank" rel="noopener">Contact</a></li>
-          <li><a class="btn btn--primary btn--sm" href="https://work.ink/2dci/koda-exe" target="_blank" rel="noopener">Get Koda</a></li>
+          <li>
+            <a class="btn btn--ghost btn--sm"
+               href="https://discord.gg/anhM7RXB6T"
+               target="_blank" rel="noopener">Contact</a>
+          </li>
+          <li><a class="btn btn--primary btn--sm" data-download="1" href="#download">Get Koda</a></li>
         </ul>
       </nav>
     </div>
@@ -67,13 +71,15 @@
           </div>
 
           <div class="cta">
-            <a target="_blank" rel="noopener" class="btn btn--primary" href="https://work.ink/2dci/koda-exe" id="downloadBtn">
+            <a target="_blank" rel="noopener" class="btn btn--primary" href="download.html" id="downloadBtn">
               Download <span class="btn__sub">Koda Beta</span>
             </a>
           </div>
 
           <p class="premium-note">
-            Want <b>Premium</b>? <a href="https://discord.gg/anhM7RXB6T" target="_blank" rel="noopener"><b>Join our Discord</b></a> and create a <b>support ticket</b>.
+            Want <b>Premium</b>?
+            <a href="https://discord.gg/anhM7RXB6T" target="_blank" rel="noopener"><b>Join our Discord</b></a>
+            and create a <b>support ticket</b>.
           </p>
 
           <div class="fine">
@@ -81,14 +87,7 @@
             <span>Optimized for Lua execution • Koda Executor Design</span>
           </div>
 
-          <div class="code">
-            <pre><code><span class="cmt">-- loadstring execution</span>
-<span class="kw">loadstring</span>(game:HttpGet(<span class="str">"https://scriptblox.com/script/Boombox-Hangout-syndicate-boombox-visualizer-83458"</span>))()
-</code></pre>
-            <pre><code><span class="cmt">Version</span>
-<span class="kw">version-5b077c09380f4fe6</span>
-</code></pre>
-          </div>
+          <!-- Removed the loadstring/code box entirely -->
         </div>
 
         <div class="hero__ui" aria-hidden="true">
@@ -100,7 +99,9 @@
 
             <div class="muha-panel__body">
               <div class="muha-logoWrap">
-                <div class="executor-frame"><img src="executor.png" alt="Koda logo" class="muha-logo" width="auto" height="auto" /></div>
+                <div class="executor-frame">
+                  <img src="executor.png" alt="Koda logo" class="muha-logo" width="auto" height="auto" />
+                </div>
               </div>
 
               <div class="muha-beta">Koda Beta</div>
@@ -108,9 +109,9 @@
 
               <div class="Koda-tags">
                 <span class="tag">Lua</span>
-                <span class="tag">loadstring</span>
+                <span class="tag">Fast</span>
                 <span class="tag">Lightweight</span>
-                <span class="tag">Fast UI</span>
+                <span class="tag">Clean UI</span>
               </div>
 
               <div class="muha-tags muha-tags--single">
@@ -265,7 +266,7 @@
           <span class="brand__text">Koda <span>Executor</span></span>
         </div>
         <p class="muted">© <span id="year"></span> <span class="muha-gradient">Koda Executor</span>. All rights reserved.</p>
-        <p class="muted">Credits: Owner &amp; Developer: Koda · Website Developer: Lordoryx · Co-Website Developer: Xpr0fi</p>
+        <p class="muted">Credits: Owner &amp; Developer: Koda · Website Developer: Lordoyx · Co-Website Developer: Xpr0fi</p>
       </div>
 
       <div class="ftr__right">
@@ -275,6 +276,29 @@
       </div>
     </div>
   </footer>
+
+  <!-- Download Options Modal -->
+  <div id="downloadModal" class="dl-modal" aria-hidden="true">
+    <div class="dl-backdrop" data-dl-close="1"></div>
+    <div class="dl-card" role="dialog" aria-modal="true" aria-label="Download options">
+      <div class="dl-head">
+        <div class="dl-title">Koda Beta</div>
+        <button class="dl-x" type="button" data-dl-close="1" aria-label="Close">✕</button>
+      </div>
+      <div class="dl-sub">Choose a provider to continue.</div>
+
+      <div class="dl-grid">
+        <button class="dl-choice" type="button" data-provider="lootlabs"><span class="dl-name">LootLabs</span></button>
+        <button class="dl-choice" type="button" data-provider="linkvertise"><span class="dl-name">Linkvertise</span></button>
+        <button class="dl-choice" type="button" data-provider="workink"><span class="dl-name">WorkInk</span></button>
+      </div>
+
+      <div class="dl-foot">
+        <span class="dl-hint">Pick any option to continue.</span>
+        <button class="dl-cancel" type="button" data-dl-close="1">Cancel</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
