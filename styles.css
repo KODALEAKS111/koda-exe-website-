@@ -1367,3 +1367,23 @@ html, body{overflow-x:hidden;}
 .muha-logoWrap .muha-providers .provider img{
   background: transparent !important;
 }
+/* --- REMOVE BLUE FOCUS / SELECTION LINES --- */
+
+/* Disable blue text selection highlight */
+::selection {
+  background: rgba(255, 105, 180, 0.25); /* pink, matches theme */
+  color: inherit;
+}
+
+/* Remove focus outlines that create blue lines */
+*:focus,
+*:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure hero section has no accidental borders */
+.hero,
+.hero * {
+  border: none;
+}
